@@ -1,0 +1,85 @@
+\documentclass[10pt]{article}
+\input{../tese/preambulosimples.tex}
+
+\title{O seguro rural no Brasil: evolução e distribuição espacial}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{cap1resumo.tex}
+\end{abstract}
+
+\input{cap1.tex}
+
+% Use isso descomentado durante edição.
+% Quando concluir a Tese, comente isso e use
+% o código do bloco abaixo.
+%\begin{singlespace}
+%\renewcommand\refname{}
+%\begin{flushleft}
+%\bibliography{../tese/bibtese2}
+%\end{flushleft}
+%\end{singlespace}
+
+%% Em cap1intriduc-corrigido.bbl foi feita correção manual de
+%% algumas referências como por exemplo as citações
+%% de Dissertação e Tese.
+%% Então deixa-se de usar o arquivo cap1introduc.bbl gerado
+%% automaticamente pelo abntcite, mas isso é só ao final.
+\begin{singlespace}
+\begin{flushleft}
+\renewcommand\refname{}
+\vspace*{-1.5cm}
+\input{cap1introduc.bbl}
+\end{flushleft}
+\end{singlespace}
+
+%%.....................................................
+%% inclui anexos
+
+\newpage
+\addcontentsline{toc}{section}{\hspace*{\distnumber}APÊNDICES}
+\begin{center}
+\section*{APÊNDICES} 
+\end{center}
+
+\begin{singlespace}
+\noindent{{APÊNDICE A -- } Mapas da distribuição espacial das variáveis do seguro rural no Brasil, de 2006 a 2019}
+\end{singlespace}
+\noindent
+\begin{small}
+\linespread{0.86}
+\input{../anexos/anexo_mapa_tematico.txt}
+\end{small}
+
+\newpage
+\begin{singlespace}
+\noindent{{APÊNDICE B -- } Mapas \textit{LISA} das variáveis do seguro rural no Brasil, de 2006 a 2019}
+\end{singlespace}
+\noindent
+\begin{small}
+\linespread{0.86}
+\input{../anexos/anexo_mapa_lisa.txt}
+\end{small}
+
+\newpage
+\begin{singlespace}
+\noindent{{APÊNDICE C -- } Código em Python reproduzível correspondente ao tratamento dos dados.}
+\end{singlespace}
+\noindent
+\vspace{0.5cm}
+%\noindent \rule[4mm]{\textwidth}{0.1ex}
+\begin{small}
+\linespread{0.7}
+\vspace{-1cm}
+\input{scripts/SR_DATA.py} 
+\noindent \rule[4mm]{\textwidth}{0.1ex}
+\end{small}
+
+\end{document}
+
+%==========================================================================================

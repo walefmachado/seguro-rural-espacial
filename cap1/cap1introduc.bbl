@@ -1,0 +1,204 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6}
+
+\bibitem[andrade21]{andrade21}
+\abntrefinfo{andrade21}{ANDRADE}{2021}
+{ANDRADE, L. Os limites e as alternativas para o seguro rural no Brasil. \textbf{Revista Globo Rural}, 2017. Discussão em: \url{https://revistagloborural.globo.com/Noticias/Agricultura/noticia/2017/04/os-limites-e-alternativas-do-seguro-rural-no-brasil.html}. Acesso em: 15 nov. 2021}
+
+\bibitem[almeida12]{almeida12}
+\abntrefinfo{almeida12}{ALMEIDA}{2012}
+{ALMEIDA, E. \textbf{Econometria Espacial Aplicada}. Campinas-SP: Alínea, 2012.}
+
+\bibitem[anselin88]{anselin88}
+\abntrefinfo{anselin88}{ANSELIN}{1988}
+{ANSELIN, L. \textbf{Spatial Econometrics: Methods and Models.} Studies in Operational Regional Science, Kluwer Academic Publishers, Dordrecht, 284p. 1988}
+
+\bibitem[anselin95]{anselin95}
+\abntrefinfo{anselin95}{ANSELIN}{1995}
+{ANSELIN, Luc. Local indicators of spatial association -- LISA. \textbf{Geographical analysis}, v. 27, n. 2, p. 93-115, 1995.}
+
+\bibitem[cnsp16]{cnsp16}
+\abntrefinfo{cnsp16}{CNSP}{2016}
+{BRASIL. Conselho Nacional de Seguros Privados. \textbf{Resolução n.339},  de  2016.  Brasília: CNSP, 2016a. Disponível em: \url{https://www.abgf.gov.br/wp-content/uploads/2016/11/Resolucao-339_11maio2016_FESR.pdf} . Acesso em: 26 jun 2021.}
+
+\bibitem[susep21]{susep21} 
+\abntrefinfo{susep21}{SUSEP}{2021}
+{BRASIL. Ministério da Fazenda. Superintendência de Seguros Privados. SUSEP, 2021. Disponível em: \url{http://www.susep.gov.br/menu/informacoes-ao-publico/planos-e-produtos/seguros/seguro-rural#}. Acesso em: 26 jun 2021}
+
+\bibitem[brasil16]{brasil16} 
+\abntrefinfo{brasil16}{BRASIL}{2016}
+{BRASIL. \textbf{Programa de Subvenção ao Prêmio do Seguro Rural: Relatório das indenizações pagas de 2006 a 2015}. Brasília, DF: Brasília: Ministério da Agricultura, Pecuária e Abastecimento (MAPA), 2016.}
+
+\bibitem[brasil17]{brasil17} 
+\abntrefinfo{brasil17}{BRASIL}{2017}
+{BRASIL. \textbf{Programa de Subvenção ao Prêmio do Seguro Rural: Relatório de Resultado 2016}. Brasília, DF: Brasília: Ministério da Agricultura, Pecuária e Abastecimento (MAPA), 2017.}
+
+\bibitem[brasil18]{brasil18} 
+\abntrefinfo{brasil18}{BRASIL}{2018}
+{BRASIL. \textbf{Programa de Subvenção ao Prêmio do Seguro Rural: Relatório de Resultado 2017}. Brasília, DF: Brasília: Ministério da Agricultura, Pecuária e Abastecimento (MAPA), 2018.}
+
+\bibitem[brasil19]{brasil19} 
+\abntrefinfo{brasil19}{BRASIL}{2019a}
+{BRASIL. \textbf{Agropecuária Brasileira em Números}. Brasília, DF: Brasília: Ministério da Agricultura, Pecuária e Abastecimento (MAPA), 2019a }
+
+\bibitem[brasil19b]{brasil19b} 
+\abntrefinfo{brasil19b}{BRASIL}{2019b}
+{BRASIL. \textbf{Programa de Subvenção ao Prêmio do Seguro Rural: Relatório de Resultado 2018}. Brasília, DF: Brasília: Ministério da Agricultura, Pecuária e Abastecimento (MAPA), 2019b.}
+
+\bibitem[brasil21]{brasil21} 
+\abntrefinfo{brasil21}{BRASIL}{2021a}
+{BRASIL. \textbf{Programa de Subvenção ao Prêmio do Seguro Rural: Relatório de Resultado 2020}. Brasília, DF: Brasília: Ministério da Agricultura, Pecuária e Abastecimento (MAPA), 2021a.}
+
+\bibitem[brasil21]{brasil21b} 
+\abntrefinfo{brasil21}{MAPA}{2021b}
+{BRASIL.  Ministério  da  Agricultura,  Pecuária  e  Abastecimento.  (2021).  \textbf{Atlas  do  seguro  rural}. Disponível em \url{http://indicadores.agricultura.gov.br/atlasdoseguro/index.htm}. Acesso em: 26 jun 2021b.}
+
+\bibitem[burgo05]{burgo05}
+\abntrefinfo{burgo05}{BURGO}{2005}
+BURGO, M. N. \textbf{Caracterização espacial de riscos na agricultura e implicações para o desenvolvimento de instrumentos para seu gerenciamento}. Dissertação de Mestrado, Escola Superior de Agricultura “Luiz de Queiroz”, ESALQ/USP, 2005.
+
+\bibitem[camara04]{camara04}
+\abntrefinfo{camara04}{CÂMARA et al.}{2004}
+{CÂMARA, G. \textit{et al.} Análise espacial e geoprocessamento. In: DRUCK, S. \textit{et al.} (Ed.). \textbf{Análise espacial de dados geográficos.} 2. ed. Brasília: Embrapa, 2004. cap. 1, p. 21–52.}
+
+\bibitem[cepea21]{cepea21}
+\abntrefinfo{cepea21}{CEPEA}{2021}
+{CENTRO DE ESTUDOS AVANÇADOS EM ECONOMIA APLICADA (CEPEA) \textbf{PIB do Agronegócio Brasileiro}. Disponível em: \url{https://www.cepea.esalq.usp.br/br/pib-do-agronegocio-brasileiro.aspx}. Acesso em: 26 jun 2021.}
+
+\bibitem[cliff81]{cliff81}
+\abntrefinfo{cliff81}{CLIFF}{1981}
+{CLIFF, A.D.; ORD, J. K. \textbf{Spatial processes: models and applications.} London: Pion, 1981.}
+
+\bibitem[darmofal06]{darmofal06}
+\abntrefinfo{darmofal06}{DARMOFAL}{2006}
+{DARMOFAL, D. Spatial Econometrics and Political Science. In \textbf{Annual Meeting of the Southern Political Science Association.}  Atlanta, GA, USA: The Society for Political Methodology, 2006. Disponível em: \url{http://web.cenet.org.cn/upfile/103632.pdf}. Acesso em: 28 jul. 2020.}
+
+\bibitem[ferreira09]{ferreira09}
+\abntrefinfo{ferreira09}{FERREIRA; FERREIRA}{2009}
+{FERREIRA, A. L. C. J.; FERREIRA, L. da R. Experiências internacionais de seguro rural: as novas perspectivas de política agrícola para o Brasil. \textbf{Econômica}, Rio de janeiro, v. 11, n. 1, p. 131-156, 2009.}
+
+\bibitem[fornazier12]{fornazier12}
+\abntrefinfo{fornazier12}{FORNAZIER; SOUZA; PONCIANO}{2012}
+{FORNAZIER,  A.;  SOUZA,  P.  M.;  PONCIANO,  N.  J.  A  importância  do  seguro  rural  na  redução  de riscos da agropecuária. Revista de Estudos Sociais, v. 14, n. 28, p. 39-52, 2012}
+
+\bibitem[getis92]{getis92}
+\abntrefinfo{getis92}{GETS; ORD}{1992}
+{GETIS, A.; ORD, K. The analysis of spatial association by use of distance statistics. \textbf{Geographical Analysis}, Ohio State University Press, v. 24, n. 3, p. 189–206, 1992.}
+
+\bibitem[griff83]{griff83}
+\abntrefinfo{griff83}{GRIFFITH}{1983}
+{GRIFFITH, D. A. The boundary value problem in spatial statistical analysis. \textbf{Journal of regional science}, v. 23, n. 3, p. 377-387, 1983.}
+
+\bibitem[haining03]{haining03}
+\abntrefinfo{haining03}{HAINING}{2003}
+{HAINING, R. \textbf{Spatial data analysis: theory and practice.} Cambrige: Cambridge university press, 2003.}
+
+\bibitem[hunter07]{hunter07}
+\abntrefinfo{hunter07}{HUNTER}{2007}
+{HUNTER, J. D. \textbf{Matplotlib}: A 2D graphics environment. \textbf{Computing In Science \& Engineering}, v. 9, n. 3, p. 90-95, 2007}
+
+\bibitem[ibge19]{ibge19}
+\abntrefinfo{ibge19}{IBGE}{2019}
+{INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA - IBGE. \textbf{Censo Agropecuário 2017}. Rio de Janeiro, v. 8, p.1-105, 2019.}
+
+\bibitem[ibge20]{ibge20}
+\abntrefinfo{ibge20}{IBGE}{2020}
+{INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA - IBGE. \textbf{Malha Municipal}.  Disponível em: \url{https://ibge.gov.br/geociencias/organizacao-do-territorio/estrutura-territorial/15774-malhas.html?=&t=o-que-e} Acesso em: 18 out. 2020.}
+
+\bibitem[jenks77]{jenks77}
+\abntrefinfo{jenks77}{JENKS}{1977}
+{JENKS, G. Optimal data classification for choropleth maps. \textbf{Department of Geography, University of Kansas Occasional Paper}, 1977.}
+
+\bibitem[jordahl14]{jordahl14}
+\abntrefinfo{jordahl14}{JORDAHL}{2014}
+{JORDAHL, K. \textbf{GeoPandas}: Python tools for geographic data. 2014. Disponível em: \url{github.com/geopandas/geopandas}, Acesso em: 28 jul. 2020.}
+
+\bibitem[jupyter17]{jupyter17}
+\abntrefinfo{jupyter17}{JUPYTER}{2017}
+{JUPYTER. \textbf{Jupyter}: a computational environment. Disponível em: \url{github.com/jupyter/notebook } Acesso em: 18 jul. 2017.} 
+
+\bibitem[kluyver19]{kluyver19}
+\abntrefinfo{kluyver19}{KLUYVER}{2016}
+{KLUYVER, T. \textit{et al}. Jupyter Notebooks: a publishing format for reproducible computational workflows. Positioning and Power in Academic Publishing: Players, Agents and Agendas, p. 87–90, 2016.}
+
+\bibitem[macedo13]{macedo13}
+\abntrefinfo{macedo13}{MACEDO; PACHECO; DO ESPÍRITO SANTO}{2013}
+{MACEDO, L. O. B.; PACHECO, A. B.; DO ESPÍRITO SANTO, E. S. A evolução do Programa de Subvenção do Prêmio do Seguro Rural: uma avaliação do período 2006-10. \textbf{Indicadores Econômicos FEE}, v. 40, n. 4, 2013.}
+
+\bibitem[mckinney10]{mckinney10}
+\abntrefinfo{mckinney10}{MCKINNEY}{2010}
+{MCKINNEY, W. Data Structures for Statistical Computing in Python. \textbf{Proceedings of the 9th Python in Science Conference}, v. 1697900, n. Scipy, p. 51–56, 2010. Disponível em: \url{https://conference.scipy.org/proceedings/scipy2010/mckinney.html}. Acesso em: 28 jul. 2020.}
+
+\bibitem[messner99]{messner99}
+\abntrefinfo{messner99}{MESSNER}{1999}
+{MESSNER, S. F. \textit{et al.}  The spatial patterning of county homicide rates: An application of exploratory spatial data analysis. \textbf{Journal of Quantitative criminology}, Springer, v. 15, n. 4, p. 423-450, 1999.}
+
+\bibitem[ord95]{ord95}
+\abntrefinfo{ord95}{ORD; GETIS}{1995}
+{ORD, J. K.; GETIS, A. Local spatial autocorrelation statistics: distributional issues and an application. \textbf{Geographical analysis}, v. 27, n. 4, p. 286-306, 1995.}
+
+\bibitem[ozaki10]{ozaki10}
+\abntrefinfo{ozaki10}{OZAKI}{2010}
+{OZAKI, V. A. Uma digressão sobre o Programa de Subvenção ao Prêmio do Seguro Rural e as implicações para o futuro deste mercado. \textbf{Revista de Economia e Sociologia Rural}, v. 48, n. 4, p. 495-514, 2010.}
+
+\bibitem[ozaki06]{ozaki06}
+\abntrefinfo{ozaki06}{OZAKI}{2006}
+{OZAKI, V. A. Avanços no programa de seguro agrícola norte-americano: novos produtos, aumento da participação e dos subsídios. \textbf{Revista Brasileira de Risco e Seguro}, Rio de Janeiro, v. 2, n. 1, p. 23-48, 2006.}
+
+\bibitem[ozaki08]{ozaki08}
+\abntrefinfo{ozaki08}{OZAKI}{2008}
+{OZAKI, V. A. Análise espacial da produtividade agrícola no Estado do Paraná: implicações para o seguro agrícola. \textbf{Revista de Economia e Sociologia Rural}, v. 46, n. 3, p. 869-886, 2008.}
+
+\bibitem[perez07]{perez07}
+\abntrefinfo{perez07}{PEREZ; GRANGER}{2007}
+{PÉREZ, F.; GRANGER, B. E. IPython: a system for interactive scientific computing. \textbf{Computing in science \& engineering}, v. 9, n. 3, p. 21-29, 2007.}
+
+\bibitem[python17]{python17}
+\abntrefinfo{python17}{PYTHON}{2017}
+{PYTHON. \textbf{The Python programming language}. Disponível em: \url{github.com/python/cpython}  Acesso em: 18 jul. 2017.}
+
+\bibitem[rey01]{rey01}
+\abntrefinfo{rey01}{REY}{2001}
+{REY, S. J. Spatial empirics for economic growth and convergence. \textbf{Geographical Analysis}, Ohio State University Press, v. 33, n. 3, p. 196-2014, 2001.}
+
+\bibitem[rey07]{rey07}
+\abntrefinfo{rey07}{REY; ANSELIN}{2007}
+{REY, S. J.; ANSELIN, L. PySAL: A Python library of spatial analytical methods.\textbf{Review of Regional Studies}, v. 37, n. 1, p. 5–27, 2007.}
+
+\bibitem[rossetti01]{rossetti01}
+\abntrefinfo{rossetti01}{ROSSETTI}{2001}
+{ROSSETTI, L. A. Zoneamento agrícola em aplicações de crédito e securidade rural no Brasil: aspectos atuariais e de política agrícola. \textbf{Revista Brasileira de Agrometeorologia}, v. 9, n. 3, p. 386-399, 2001.}
+
+\bibitem[santos13]{santos13}
+\abntrefinfo{santos13}{SANTOS; SOUSA; ALVARENGA}{2013}
+{SANTOS, G. R.; SOUSA, A. G.; ALVARENGA, G. \textbf{Seguro agrícola no Brasil e o desenvolvimento do Programa de Subvenção ao Prêmio.} Brasília: Ipea, 2013. (Texto para Discussão, n. 1910). Disponível em: \url{http://www.ipea.gov.br/portal/images/stories/PDFs/TDs/td_1910.pdf}  Acesso em: 14 jun. 2021.}
+
+\bibitem[santos17]{santos17}
+\abntrefinfo{santos17}{SANTOS}{2017}
+{SANTOS, G. R.; SILVA, F. C. \textbf{Dez anos do Programa de Subvenção ao Prêmio de Seguro Agrícola:}  proposta  de  índice  técnico  para  análise  do  gasto  público  e  ampliação  do  seguro.  Rio de Janeiro: Ipea, 2017. Disponível em: \url{http://repositorio.ipea.gov.br/bitstream/11058/7718/1/td_2290.pdf}. Acesso em: 14 jun. 2021.}
+
+\bibitem[santos17]{santos16}
+\abntrefinfo{santos17}{SANTOS; MARTINS}{2016}
+{SANTOS, W. G. dos; MARTINS, J. I. F. O Zoneamento Agrícola de Risco Climático e sua contribuição à agricultura brasileira. \textbf{Revista de Política Agrícola}{Revista de Política Agrícola}, v. 25, n. 3, p. 73-94, dez. 2016}
+
+\bibitem[silva14]{silva14}
+\abntrefinfo{silva14}{SILVA; TEIXEIRA; SANTOS}{2014}
+{SILVA, J. A. da; TEIXEIRA, M. do S. G.; SANTOS, V. G. dos. Avaliação do Programa de Subvenção ao Prêmio do Seguro Rural–2005 a 2012. \textbf{Revista de Política Agrícola}, v. 23, n. 1, p. 105-118, 2014.}
+
+\bibitem[tyszler06]{tyszler06}
+\abntrefinfo{tyszler06}{TYSZLER}{2006}
+{TYSZLER, M. \textbf{Econometria Espacial: Discutindo Medidas para a Matriz de Ponderação Espacial}. 2006. 155 p. Dissertação (Mestrado em Administração Pública e Governo) - Fundação Getúlio Vargas. São Paulo, 2006.}
+
+\bibitem[walt11]{walt11}
+\abntrefinfo{walt11}{WALT; COLBERT; VAROQUAUX}{2011}
+{WALT, S. van der; COLBERT, S.; VAROQUAUX, G. The NumPy Array: A Structurefor Efficient Numerical Computation. \textbf{Computing in Science Engineering}, v. 13, n. 2, p.22–30, 2011.}
+
+\bibitem[waskom14]{waskom14}
+\abntrefinfo{waskom14}{WASKOM}{2014}
+{WASKOM, M. \textit{et al}. \textbf{Seaborn}: statistical data visualization. 2014. Disponível em: \url{https://seaborn.pydata.org/}. Acesso em: 28 jul. 2020.}
+
+\end{thebibliography}
