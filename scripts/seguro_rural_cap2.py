@@ -1,14 +1,16 @@
+#\begin{verbatim}
+
 # Análise de Componentes Principais com dados de Seguro Rural
 
+## Instalando bibliotecas 
+#!pip install geopandas==0.8.1
+#!pip install --upgrade pyshp
+#!pip install shapely==1.7.0
+#!pip install jenkspy
+#!pip install --upgrade descartes
+#!pip install mapclassify==2.3.0 libpysal==4.3.0 splot==1.1.3
+
 ## Importando as bibliotecas
-
-!pip install geopandas==0.8.1
-!pip install --upgrade pyshp
-!pip install shapely==1.7.0
-!pip install jenkspy
-!pip install --upgrade descartes
-!pip install mapclassify==2.3.0 libpysal==4.3.0 splot==1.1.3
-
 import pandas as pd
 import numpy as np
 import scipy.stats as stats
@@ -45,6 +47,11 @@ import shapefile
 from google.colab import drive, files
 
 drive.mount("/content/drive")
+
+# Descomente para clonar o repositório com os dados utilisados
+#!git clone -l -s git://github.com/walefmachado/seguro_rural_espacial.git dados
+#%cd dados
+#!ls
 
 ## Funções
 
@@ -129,10 +136,11 @@ def myplot(score,coeff,labels=None):
     ax.set(xlim=(None, 0.75), ylim=(None, 0.7))
     plt.grid()
 
-img=mpimg.imread('/content/drive/My Drive/Mestrado/Imagens/rosa_dos_ventos_3.png')
+img=mpimg.imread('https://github.com/walefmachado/seguro_rural_espacial/blob/main/figuras/rosa_dos_ventos_3.png?raw=true')
 
 #Regioes geograficas
-sf = shapefile.Reader('/content/drive/My Drive/Mestrado/Dados/estados/estados_2010.shp')
+#sf = shapefile.Reader('/content/drive/My Drive/Mestrado/Dados/estados/estados_2010.shp')
+sf = shapefile.Reader('/content/dados/dados/estados_2010.shp')
 shapes = sf.shapes()
 Nshp = len(shapes)
 
@@ -688,3 +696,5 @@ axs[15].set_axis_off()
 axs[15].imshow(img)
 plt.subplots_adjust(left=7, bottom=7, right=8, top=8, wspace=0.001, hspace=0.005)
 plt.show();
+
+#\end{verbatim}

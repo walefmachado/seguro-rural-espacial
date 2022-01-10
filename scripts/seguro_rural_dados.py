@@ -1,4 +1,5 @@
-\begin{verbatim}
+#\begin{verbatim}
+
 # Dados de Seguro Rural
 
 ## Bibliotecas
@@ -489,4 +490,5 @@ for i in range(len(dados_cult)-1):
 
 # Salvando os dados
 dados_cult_f.to_csv('dados_cult_f.csv', index=False) 
-\end{verbatim}
+
+#\end{verbatim}
