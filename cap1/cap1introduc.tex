@@ -1,7 +1,7 @@
 \documentclass[10pt]{article}
 \input{../tese/preambulosimples.tex}
 
-\title{O seguro rural no Brasil: evolução e distribuição espacial}
+\title{O seguro rural no Brasil: evolução e distribuição regional}
 
 \date{}
 
@@ -48,36 +48,51 @@
 \end{center}
 
 \begin{singlespace}
-\noindent{{APÊNDICE A -- } Mapas da distribuição espacial das variáveis do seguro rural no Brasil, de 2006 a 2019}
+\noindent{{APÊNDICE A -- } Mapas da distribuição espacial das variáveis do seguro rural no Brasil, de 2006 a 2019} \label{apendice_A}
 \end{singlespace}
 \noindent
 \begin{small}
 \linespread{0.86}
-\input{../anexos/anexo_mapa_tematico.txt}
+\input{../anexos/anexo_mapa_tematico.tex}
 \end{small}
+
+%\newpage
+%\begin{singlespace}
+%\noindent{{APÊNDICE B -- } Autocorrelação espacial (\textit{I} de Moran)}
+%\end{singlespace}
+%\noindent
+%\begin{small}
+%\begin{table}[H]
+%\caption{Autocorrelação espacial (\textit{I} de Moran) para as variáveis de seguro rural. Brasil $2006-2020$}\label{seguradoras}
+%\input{../anexos/moran_table.tex}
+%\end{table}
+%\end{small}
+
+%\newpage
+%\begin{singlespace}
+%\noindent{{APÊNDICE C -- } Mapas \textit{LISA} das variáveis do seguro rural no Brasil, de 2006 a 2019}
+%\end{singlespace}
+%\noindent
+%\begin{small}
+%\linespread{0.86}
+%\input{../anexos/anexo_mapa_lisa.tex}
+%\end{small}
 
 \newpage
 \begin{singlespace}
-\noindent{{APÊNDICE B -- } Mapas \textit{LISA} das variáveis do seguro rural no Brasil, de 2006 a 2019}
+\noindent{{APÊNDICE D -- } Códigos em Python}
 \end{singlespace}
-\noindent
+\vspace{0.25cm}
 \begin{small}
 \linespread{0.86}
-\input{../anexos/anexo_mapa_lisa.txt}
-\end{small}
+\noindent Código correspondente ao tratamento dos dados. Disponível online em:\\ \url{https://github.com/walefmachado/seguro_rural_espacial/blob/main/scripts/seguro_rural_dados.py}
 
-\newpage
-\begin{singlespace}
-\noindent{{APÊNDICE C -- } Código em Python reproduzível correspondente ao tratamento dos dados.}
-\end{singlespace}
-\noindent
-\vspace{0.5cm}
+\vspace{0.25cm}
+
+\noindent Código correspondente aos gráficos, mapas e análise exploratória espacial. Disponível online em: \\
+\url{https://github.com/walefmachado/seguro_rural_espacial/blob/main/scripts/seguro_rural_cap1.py}
+%\input{scripts/SR_DATA.py} 
 %\noindent \rule[4mm]{\textwidth}{0.1ex}
-\begin{small}
-\linespread{0.7}
-\vspace{-1cm}
-\input{scripts/SR_DATA.py} 
-\noindent \rule[4mm]{\textwidth}{0.1ex}
 \end{small}
 
 \end{document}

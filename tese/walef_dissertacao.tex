@@ -1,0 +1,799 @@
+%=========================================================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+%% arquivo de definições de estilo documento
+\input{preambulo.tex}
+
+%% para referencias bibliográficas no padrão ABNT
+%\usepackage[abnt-substyle=UFLA,abnt-emphasize=bf,abnt-etal-list=3,abnt-and-type=e]{abntcite}
+
+%=========================================================================================================
+% Definições de conteúdo
+
+%% título em português e inglês e caixa alta
+\def\tesetitle{A distribuição espacial do seguro rural no Brasil}
+%\def\tesetitleeng{Interpretable parametrization in nonlinear models}
+\def\tesetitlecap{\expandafter\MakeUppercase\expandafter{\tesetitle}}
+
+%% autor e abreviações
+\def\teseauthor{Walef Machado de Mendonça}
+\def\teseauthorcap{\expandafter\MakeUppercase\expandafter{\teseauthor}}
+\def\teseauthorrev{Mendonça, Walef Machado}
+\def\teseauthorcrv{MENDONCA, Walef Machado}
+
+%% ano
+\def\teseyear{2022}
+
+%% orientador
+\def\teseorientador{Patrícia de Siqueira Ramos}
+
+%% palavras com infenização manual (não contidas no dicionário)
+\hyphenation{ne-ces-s\'arias fa-zen-do pa-r\^{a}-me-tro a-va-li-ar vi-san-do pr\'o-prias
+              Ge-nu-chten fi-ca-ram a-do-\c{c}\~ao in-ter-pre-t\'a-veis mo-no-mo-le-cu-lar
+              re-pa-ra-me-tri-z\'a-lo}
+
+\begin{document}
+\pagestyle{empty}
+
+%=========================================================================================================
+
+%% inclui as capas, folhas de rosto, etc
+\input{capaspretexto.tex}
+
+%=========================================================================================================
+
+\newpage
+\thispagestyle{empty}
+
+%% inclui resumo e abstract geral
+\input{resumos.tex}
+
+%=========================================================================================================
+% Sumário
+
+\newpage
+
+
+\begin{center}
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+\begin{spacing}{1.4}
+\listoffigures
+%{
+%\let\oldnumberline\numberline%
+%\renewcommand{\numberline}{\figurename~\oldnumberline}
+%\listoffigures 
+%}
+\thispagestyle{empty}
+\end{spacing}
+\end{center}
+
+\newpage
+
+\begin{center}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+\begin{spacing}{1.4}
+%\listoftables
+{
+\let\oldnumberline\numberline%
+\renewcommand{\numberline}{\tablename~\oldnumberline}
+\listoftables 
+}
+\thispagestyle{empty}
+\end{spacing}
+\end{center}
+
+\newpage
+
+\begin{center}
+\renewcommand{\contentsname}{\normalsize{SUMÁRIO}}
+\begin{spacing}{1.4}
+\tableofcontents
+\thispagestyle{empty}
+\end{spacing}
+\end{center}
+
+
+\newpage
+\pagestyle{fancy}
+
+\section{INTRODUÇÃO GERAL}
+
+O agronegócio brasileiro tem se mostrado o único ramo da economia a apresentar crescimento no decorrer dos últimos anos \cite{guia_20}. Segundo cálculos realizados pelo Cepea (Centro de Estudos Avançados em Economia Aplicada), da Esalq/USP, em parceria com a CNA (Confederação da Agricultura e Pecuária do Brasil), o PIB do agronegócio brasileiro segue em expansão. Em 2019, a parcela do agronegócio brasileiro foi de  $20,5\%$  do PIB nacional. Já em 2020, o setor agropecuário brasileiro alcançou a participação de $26,6\%$ do PIB. Em valores monetários, o PIB do País totalizou R\$ $7,45$ trilhões em 2020, e a participação do agronegócio chegou a quase R\$ $2$ trilhões. 
+
+Ainda segundo o relatório do Cepea, até o segundo trimestre de $2021$, o PIB do agronegócio brasileiro já havia acumulado um aumento de $9,81\%$ em relação ao mesmo período no ano anterior. Além disso, o relatório aponta que, ao se considerar o atual desempenho da economia brasileira, a participação do agronegócio nacional deve ficar em torno de $30\%$ do PIB em $2021$ \cite{cepea21}. 
+
+Segundo dados dos censos agropecuários, entre $2006$ e $2017$, tanto a área total quanto a produção agrícola e pecuária vivenciaram crescimento. Neste período, houve um acréscimo de cerca de $5,8\%$ na área total dos estabelecimentos agropecuários (IBGE, 2019). De acordo com o Guia de Seguros Rurais, elaborado pela Comissão Nacional de Política Agrícola da Confederação da Agricultura e Pecuária do Brasil (CNA) e pelo Ministério da Agricultura, Pecuária e Abastecimento (MAPA), esse resultado advém do crescimento da área plantada das principais culturas e, de maiores investimentos em equipamentos e tecnologias \cite{guia_20}.
+
+Dada a relevância do setor agropecuário na economia brasileira, é necessário destacar que este ramo possui características muito específicas com relação à dimensão dos riscos aos quais está sujeito \cite{burgo05}. Alguns riscos mais relevantes se devem, principalmente, às instabilidades climáticas e ameaças sanitárias que podem afetar a produção. Há também riscos devidos à razões de mercado, como variações das taxas de câmbio e juros, ou a condições ligadas ao ambiente de negócios, tais como, alterações em marcos regulatórios e em políticas públicas. Todos esses fatores geram variações na renda do setor e, mesmo em anos de crescimento das safras, eventos climáticos de alcance regional podem atingir os produtores, e causar perdas expressivas. Dessa forma, é necessário que sejam empregadas políticas de apoio à gestão de riscos \cite{brasil21}. 
+
+Uma gestão de riscos apropriada tem potencial de afetar de forma positiva a estabilidade da renda do produtor e sua própria permanência no setor agropecuário. O gerenciamento de riscos agropecuários pode ocorrer de diversas maneiras, no entanto, a contratação de seguro é uma das medidas mais comuns. O seguro rural é uma importante ferramenta de mitigação de riscos e proteção da renda. Esta modalidade de seguro atua no sentido de amenizar as perdas e possibilitar a recuperação da capacidade financeira do produtor rural em caso de ocorrência de sinistros \cite{brasil19b}.  
+
+Nesse sentido, este estudo tem  o intuito de fornecer informações para o debate de aperfeiçoamentos no sistema de seguro rural brasileiro, de forma a contribuir para uma agricultura mais eficiente e com menores riscos para o produtor rural. Para tanto, a presente pesquisa foi dividida em dois artigos. No primeiro deles, o intuito é realizar uma análise exploratória da evolução das variáveis relacionadas ao seguro rural entre os anos de $2006$ e $2019$. Para esse fim, foi realizada uma análise descritiva da evolução das variáveis de apólices de seguro rural. 
+
+O segundo artigo, por sua vez, tem como objetivo investigar a distribuição espacial de dados multivariados do seguro rural nos municípios brasileiros entre os anos de $2006$ e $2019$. Para tanto, busca-se investigar se, no Brasil, as variáveis de seguro rural se distribuem de forma aleatória no espaço ou se há padrões de distribuição espacial. Além disso, por meio da análise da distribuição espacial do seguro rural no período, busca-se identificar se há regiões que tiveram alterações significativas no número de contratações de seguro. 
+
+Para alcançar tais objetivos, o segundo artigo faz uso da Análise de Componentes Principais (ACP), com objetivo de reduzir a dimensionalidade dos dados e incorporar aos escores do primeiro componente principal informação das variáveis originais. Para mais, utiliza-se a Análise Exploratória de Dados Espaciais (AEDE), aplicada aos escores do primeiro componente principal, com o objetivo de investigar a presença de padrões de distribuição espacial.
+
+Em ambos os artigos, foram utilizados dados dos Censos do seguro rural, compilados pelo Ministério da Agricultura, Pecuária e Abastecimento (MAPA) e dados com atributos geográficos do território brasileiro disponíveis no endereço eletrônico do Instituto Brasileiro de Geografia e Estatística (IBGE).
+
+\newpage
+\section{REFERENCIAL TEÓRICO}
+
+O objetivo dessa seção é fazer uma apresentação do sistema de seguro rural e como ele se estruturou no Brasil. Por fim, são apresentados aspectos da análise espacial e da análise multivariada. 
+
+\subsection{O SEGURO RURAL}
+
+O gerenciamento de riscos agropecuários pode ser efetuado de diversas formas, no entanto, a contratação de seguro rural é uma das formas mais usuais. Essa modalidade de seguro é um dos mais importantes instrumentos de política agrícola, pois possibilita que o produtor rural se proteja e mantenha sua capacidade financeira no caso de ocorrência de perdas decorrentes, principalmente, de fenômenos climáticos adversos \cite{susep21_g}. Não obstante, o seguro rural é mais abrangente e cobre não só as atividades agrícolas, mas também oferece cobertura para a pecuária, para o patrimônio do produtor, seus produtos, o crédito para comercialização desses produtos e até mesmo oferece seguro de vida aos produtores \cite{cnsp16_g}. 
+
+Desse modo, o objetivo do seguro rural é proporcionar coberturas que, ao mesmo tempo, atendam ao produtor e a sua produção, à geração de garantias a seus financiadores, investidores, parceiros de negócios, ou seja, todos interessados na maior diluição possível dos riscos das atividades agropecuárias. Dessa forma, o seguro rural propicia um ambiente mais favorável ao desenvolvimento das atividades agropecuárias pois proporciona a garantia do fluxo de renda, favorece um aumento da área plantada, facilita a obtenção de financiamento e possibilita o compartilhamento do risco da agropecuária com outros agentes e setores econômicos \cite{susep21_g}. 
+
+No entanto, é importante destacar que a adesão ao seguro rural no Brasil ainda é muito baixa. Segundo dados do Ministério da Agricultura e Pecuária e Abastecimento, em 2018, apenas $42.376$ produtores rurais brasileiros adotaram o seguro como forma de gerenciar os riscos agropecuários \cite{brasil21}. Ao se considerar os dados do Censo Agropecuário de 2017, que apontam a existência de cerca de  $5.073.324$ de estabelecimentos  agropecuários no Brasil, é possível depreender que o percentual de estabelecimentos que utilizam seguro rural é consideravelmente limitado \cite{ibge19}.
+
+A baixa adesão ao seguro rural se deve a diversos problemas relacionados ao funcionamento do mercado. Destacam-se problemas como os elevados investimentos e custos administrativos, a possibilidade de riscos catastróficos, a forte influência do risco moral e da seleção adversa na formação das carteiras, como fatores que limitam a eficiência da iniciativa privada na oferta de produtos \cite{brasil19b}. Segundo Ozaki (2010), outro fator que atua no sentido de limitar a atuação das seguradoras no ramo do seguro rural é a qualidade e quantidade de informações disponíveis. 
+
+Nesse contexto, as próximas seções apresentam uma breve discussão dos modelos de seguro rural implantados em outros países, como Estados Unidos, Canadá e Espanha, e o modelo que vem se  desenvolvendo no Brasil.
+
+
+\subsubsection{O seguro rural em outros países}
+
+Ao analisar as principais experiências internacionais, Ferreira e Ferreira (2009) comparam o desenvolvimento do seguro rural no Brasil com as experiências desse ramo de seguro nos Estados Unidos e no Canadá. Tanto no Brasil quanto nos outros países analisados, Ferreira e Ferreira (2009) apontam que o maior desafio da atuação do setor público é encontrar uma forma de fomentar o seguro rural que não crie distorções na produção e estimule a perda de produtividade. No entanto, segundo Ferreira e Ferreira (2009), a participação do governo é fundamental e deve garantir a sustentabilidade do seguro rural no caso de ocorrência de eventos catastróficos de forma a assegurar a estabilidade social dos agricultores e demais participantes do sistema. Além disso, destaca-se que o grande obstáculo, para a atuação do setor público, é ser capaz de conservar a renda dos agricultores sem comprometer o orçamento público, de maneira que os programas de seguro rural sejam autossustentáveis \cite{ferreira09_g}.  
+
+Segundo Fornazier, Souza e Ponciano (2012), ao analisar as experiências e modelos de seguro rural adotados no Brasil, Espanha e EUA, mesmo entre os países desenvolvidos, foi necessário muitos anos para estabelecer os atuais modelos. A Espanha levou 25 anos para desenvolver seu atual modelo de seguro agrícola e, nos EUA, o desenvolvimento do atual modelo de seguro rural levou cerca de quase 70 anos \cite{ozaki06_g}.
+
+% Em países onde os recursos públicos são escassos, como o Brasil, é pouco provável que ocorra alguma forma de subsídio direto como nos EUA, ao contrário, salienta-se a utilização de incentivos indiretos. Esse é o caso da Argentina, onde a Oficina de Riesgo Agropecuario (ORA) considera que os efeitos do clima, os rendimentos, os custos e a variabilidade de preços são fundamentais para um diagnóstico e manejo adequado do risco agrícola. Assim, o governo Argentino desenvolveu um modelo de Manejo Integrado do Risco Agropecuário que combina as seguintes estratégias: i) avaliação orientada para a sistematização e análise da informação necessária para obter conclusões precisas sobre o risco; ii) redução do risco pela minimização do impacto previamente avaliado (REDPA, 2004). 
+
+% Em função desse enfoque a ORA tem como missão as seguintes atividades: i) gerar, atualizar, e publicar os Mapas de Riesgo Agro-Climáticos, baseados no tratamento sistemático de variáveis climáticas e seus impactos sobre a atividade agropecuária; ii) publicar mensalmente indicadores sobre os fenômenos climáticos de grande escala a exemplo do fenômeno El Niño Oscilação Sul 12 ; iii) desenvolver e oferecer ferramentas de análise de risco econômico por meio dos Portafolios Eficientes 13 ; iv) construir, publicar e promover a adoção dos Portafolios Óptimos como uma estratégia de redução do risco baseada na diversificação de atividades; v) difundir informação atualizada da evolução de preços e conscientizar os atores da importância dos riscos de mercado e das vantagens de adotar um esquema de coberturas; vi) desenvolver novas áreas técnicas para estudo de outros riscos relacionados, a exemplo do risco em atividades florestais; vii) analisar e promover o desenvolvimento de novas opções de comercialização para o setor agrícola; viii) implementar um plano de ação dirigido a expandir o mercado de seguros agropecuários de modo de alcançar o maior número de produtores, nas distintas zonas do país e nas diferentes atividades agropecuárias; e ix) promover a assistência técnica e assessorar a implementação de políticas relacionadas com o manejo do risco agropecuário e o desenvolvimento do mercado de seguros aos Governos Provinciais que solicitem (REDPA, 2004).
+
+% VIEIRA JUNIOR, Pedro Abel \textit{et al.}. Dimensões e perspectivas do Seguro Rural: o caso brasileiro e algumas experiências internacionais. 2008.
+
+Nesse sentido,  a literatura aponta que é necessário que o poder público interfira no mercado, ou atuando diretamente como seguradora, ou criando programas que estimulem o mercado de produtos de seguro rural. No Brasil, um dos mecanismos adotados foi o programa de subvenção ao prêmio de seguro rural, que será discutido mais adiante. 
+
+\subsubsection{O seguro rural no Brasil}
+
+%Primeiro seguro rural e primeiras "iniciativas" de seguro rural
+No Brasil, as primeiras iniciativas de implementar o seguro rural ocorreram em meados da década de $1930$ e desenvolveram-se principalmente nas esferas estaduais. Em $1939$, o Estado de São Paulo determinou a criação de um seguro obrigatório contra o granizo na produção de algodão \cite{maia11}. Segundo Silva, Teixeira e Santos (2014), os resultados do seguro para a proteção da lavoura algodoeira em São Paulo influenciaram a criação de novos programas como a Carteira de Seguro Agrícola contra Granizo para a Viticultura, criada em $1948$, e a Carteira de Seguro Agrícola contra Geada para Horticultura instituída em $1964$
+
+O trabalho de Silva, Teixeira e Santos (2014) também destaca o seguro para granizo, criado no final da década de $1940$ no Instituto Rio-Grandense do Arroz (Irga), e o seguro criado pela Associação dos Fumicultores do Brasil (Afubra), que buscava indenizar com recursos próprios os produtores de fumo nos estados de Santa Catarina e Rio Grande do Sul.
+
+No âmbito federal, em $1948$, foi criado o Instituto de  Resseguros do Brasil (IRB), para diminuir os danos de eventos adversos e garantir maior estabilidade aos produtores rurais \cite{silva14}. Além disso, também foi criada pelo Governo Federal, em $1954$, a Companhia Nacional de Seguro Agrícola (CNSA) e o Fundo de Estabilidade do Seguro Agrário. Ademais, Maia,  Roitman e de Conti (2011) evidenciaram que a estruturação e gestão dos seguros da CNSA ficaram sob responsabilidade do IRB. Contudo, as atividades da CNSA foram encerradas em $1996$, devido, segundo Gemignani (2000), ao insucesso em difundir o seguro rural de forma a possibilitar sua exploração econômica \cite{maia11, silva14}.
+
+Em $1966$ e $1967$, são instituídos o Decreto-Lei nº $73$ e o Decreto nº $60.459$, que estabelecem as bases legais para as atividades de seguro e a criação do Sistema Nacional de Seguros Privados (SNSP). O decreto de $1967$ também criou o Fundo de Estabilidade do Seguro Rural (FESR), cujos recursos eram geridos pelo IRB e o objetivo principal era assegurar a estabilidade das operações de seguro e fornecer uma cobertura adicional para os riscos de sinistro \cite{silva14}
+
+A Resolução nº $5$ do Conselho Nacional de Seguros Privados, instituída em $1970$, teve um importante papel na definição das modalidades de seguros agrários. Nesta Resolução, foi definido o seguro agrícola, que fornece cobertura contra perdas decorrentes de fenômenos meteorológicos, doenças e pragas, o seguro pecuário que fornece cobertura para morte de animais causadas por doenças ou acidentes, assim como, o seguro de benfeitorias e produtos agropecuários. Por fim, a Resolução nº $5$ também estabelece o seguro de crédito, que cobre incapacidade de pagamentos de compradores dos produtos agropecuários \cite{silva14}.
+
+%Criação do proagro
+Apesar das diversas ações do Governo Federal, o seguro rural se desenvolveu de forma lenta e restrita à uma pequena parcela da produção, o que motivou a criação do Programa de Garantia da Atividade Agropecuária (Proagro), através da Lei nº $5.969$, de $11$ de dezembro de $1973$ \cite{silva14}. Inicialmente, sob a responsabilidade do Banco Central, o Proagro passou a vincular o seguro rural às operações de crédito agropecuário e utilizou emissões monetárias para pagamentos de sinistros. Segundo Maia, Roitman e De Conti (2011), o sistema de financiamento do Proagro gerou déficits que motivaram diversas modificações no Programa, sendo ainda um dos mais importantes instrumentos para a gestão de riscos na agricultura no Brasil \cite{maia11}.
+
+%Criação do PSR
+A partir de $2003$, o Governo Federal passou a adotar uma política de subvenção por meio do Programa de Subvenção ao Prêmio do Seguro Rural (PSR), instituído por meio da Lei nº $10.823$ de $19$ de dezembro de $2003$ e do Decreto nº $5.121$ de $2004$ \cite{brasil18}. Este programa busca, assim como ocorre em países europeus e nos Estados Unidos, conceder subvenção econômica ao valor do prêmio do seguro rural contratado com seguradoras autorizadas.
+
+\subsubsection{Programa de Subvenção ao Prêmio do Seguro Rural}
+
+Segundo o Decreto nº $5.121$ de $2004$, o PSR tem a finalidade de subsidiar parte do prêmio do seguro rural, de forma a assegurar a função do seguro rural como mecanismo de estabilidade da renda do produtor, além de suscitar a aplicação das tecnologias adequadas para os empreendimentos agropecuários \cite{guia_20}. Tal política do governo busca tornar o seguro rural mais acessível aos agricultores, dividindo os custos de aquisição da apólice entre o governo e os produtores. 
+
+A operacionalização do PSR é feita pelo Ministério da Agricultura, Pecuária e Abastecimento (MAPA), envolve os produtores rurais, que devem fazer a contratação do seguro rural diretamente com as seguradoras habilitadas pela Superintendência de Seguros Privados (Susep) e cadastradas no MAPA. Desta forma, para obter os recursos do programa, os produtores devem contratar a apólice e requerer a subvenção do governo federal. O governo federal, por sua vez, repassa para as seguradoras habilitadas, um percentual do prêmio do seguro contratado, resultando da redução do valor a ser pago pelo produtor rural \cite{silva14}.
+
+O valor concedido como subvenção ao prêmio do seguro rural leva em conta algumas características como a modalidade do seguro, o tipo de cultura e o tipo de cobertura. As técnicas de execução e prioridades da política do PSR são estabelecidas pelo Comitê Gestor Interministerial do Seguro Rural (CGSR). Com o objetivo de fiscalizar a gestão do programa, este comitê é formado pelo MAPA, que é responsável pela coordenação, e por representantes do Ministério da Economia (ME) e da Superintendência de Seguros Privados (Susep) \cite{brasil21_2} 
+
+Em análise à evolução do PSR, Macedo, Pacheco e Do Espírito Santo (2013) apontam que, ao longo do período de 2006 a 2010, a agenda da política agropecuária brasileira vivenciou uma evolução qualitativa, através da introdução do PSR. No entanto, os recursos destinados à subvenção do prêmio de seguro rural no orçamento federal ainda eram inferiores aos necessários para a cobertura de percentuais da produção agropecuária similares aos alcançados em outros países. Dessa forma, os recursos federais disponibilizados precisavam ser aperfeiçoados, para que alcançassem taxas representativas de cobertura no seguro rural \cite{macedo13_g}. 
+
+Ao investigar a participação do PSR na universalização do acesso ao seguro rural, Silva, Teixeira e Santos (2014) apontam que os dados podem levar à falsa conclusão de que as metas de ampliação do seguro pelo PSR foram atingidas em nível nacional no período de 2005 a 2012. Não obstante, quando os dados foram desagregados por região, observou-se uma concentração das subvenções na região Sul desde a implantação do PSR. Desse modo, os objetivos do programa foram cumpridos de forma parcial, pois, apesar de ter ocorrido uma ampliação do seguro rural, esta ampliação ocorreu de forma concentradora \cite{silva14}. 
+
+Em face da relevância do setor agrícola para a economia brasileira, é possível compreender que o seguro rural e o PSR são importantes ferramentas de gestão de risco e que contribuem para uma agricultura mais eficiente e com menores riscos para o produtor rural. O PSR, em especial, opera como uma forma de estimular a aquisição das apólices de seguro rural, buscando induzir o uso de tecnologias apropriadas e modernizando a gestão do empreendimento agropecuário. 
+
+\subsubsection{O zoneamento agrícola}
+
+Conforme apresentado no Guia de Seguros Rurais (2020), o PSR tem como condicionalidade, para o recebimento da subvenção, o cumprimento dos indicadores do zoneamento agrícola de risco climático (ZARC). O ZARC faz um levantamento do período de plantio das culturas por município e leva em consideração características como o tipo de solo e o clima da região. Dessa forma, o ZARC busca evitar que eventos climáticos adversos ocorram durante as fases em que as culturas se encontram mais vulneráveis e, com isso, minimizar as perdas agrícolas \cite{guia_20}.
+
+Como apresentado por Rossetti (2001), o  zoneamento agrícola de risco climático (ZARC) é um projeto que busca o desenvolvimento de estudos de regionalização dos eventos climáticos adversos no Brasil, com objetivo de minimizar as perdas da produção agrícola. Além disso, o zoneamento agrícola busca disponibilizar ao produtor rural métodos para mitigar os riscos climáticos. Segundo Rossetti (2001), os resultados demonstraram que o Zoneamento tem beneficiado o setor agropecuário brasileiro, principalmente no que diz respeito à redução das perdas provocadas por eventos climáticos e ao aumento da produtividade das lavouras zoneadas.
+
+Dessa forma, o zoneamento agrícola integra uma ferramenta relevante para o gerenciamento dos riscos pelo produtor e pelas seguradoras. Desse modo, a concessão da subvenção ao prêmio de seguro pelo programa PSR se dá apenas quando há o cumprimento, pelo produtor rural, das recomendações estabelecidas pelo zoneamento agrícola de risco climático do MAPA. Nas situações em que não há o zoneamento de risco climático realizado pelo MAPA para alguma região ou cultura, a seguradora pode empregar zoneamentos de outras instituições oficiais de pesquisa que considerem critérios probabilísticos na determinação das datas de plantio e riscos das culturas \cite{santos16}. 
+
+% Dependência espacial
+Ao analisar a correlação espacial de dados de produtividade das culturas de milho e soja no Estado do Paraná entre 1990 e 2002, Ozaki (2008) aponta que há um padrão de dependência espacial nos dados e, dessa forma, as unidades seguradas não podem ser consideradas espacialmente independentes. Além disso, Ozaki (2008) destaca que, a presença de dependência espacial implica em sérias consequências no mercado de seguros agrícolas, pois o risco de insolvência das seguradoras frente aos segurados é grande, na ocorrência de um evento climático extremo.  Nesse sentido, portanto, as seguradoras devem se atentar a estratégias que possibilitem uma diversificação geográfica e a concentração de riscos em determinadas regiões deve ser evitada \cite{ozaki08_g}. 
+
+Outro estudo que buscou analisar a dependência espacial do seguro rural no Brasil no ano de 2017, foi apresentado por Biazoli, Ramos e Frias (2020). Segundo os autores, foi possível observar que as apólices de seguro rural não se distribuíam de forma aleatória pelo território brasileiro e foi possível detectar a formação de aglomerados espaciais do seguro rural para nos estados da região Sul do Brasil. % \cite{biazoli20_g}
+
+\subsection{ANÁLISE ESPACIAL}  
+	
+A análise espacial consiste em um conjunto de métodos capazes de mensurar propriedades e relacionamentos de acordo com a localização espacial de determinado fenômeno, buscando incorporar o espaço à análise. Dessa forma, antes de partir para a modelagem, é comumente  realizada a análise exploratória dos dados, buscando identificar os padrões de dependência espacial no fenômeno em questão \cite{camara04_g}.
+
+A análise espacial é capaz de incorporar alguns fenômenos como a dependência espacial e a heterogeneidade espacial. A ocorrência da dependência espacial pode ser retratada pela Primeira Lei da Geografia, ou Lei de Tobler. Esta lei, enunciada em $1970$ pelo geógrafo Waldo Tobler, diz que tudo depende de tudo, mas coisas próximas estão mais relacionadas entre si do que coisas mais distantes. Dessa forma, a dependência espacial corresponde no fato de que o valor de uma variável em uma determinada região depender do valor desta mesma variável em regiões geograficamente próximas \cite{almeida12_g}.
+	
+Ainda segundo Almeida (2012), processos temporais possuem relações diferentes dos processos espaciais. Nos processos temporais, o valor de uma variável qualquer no tempo $t$ é influenciado pelo valor da variável no tempo $t-1$, mas o inverso não ocorre. Diferentemente desse tipo de processo, nos  processos espaciais têm-se a multidirecionalidade nas relações entre as regiões, ou seja, o valor da variável na região $i$ depende do valor na região $j$, e a região $j$ depende da região $i$ em relação ao valor da mesma variável.
+	
+%Heterogeneidade Espacial
+	
+Outro fenômeno espacial que deve ser incorporado à análise, é a heterogeneidade espacial. Tal fenômeno refere-se à variação nos relacionamentos entre as variáveis ao longo do espaço. Em geral, podem-se esperar diferentes relacionamentos em cada uma das unidades espaciais, ou seja, podem haver diferentes respostas, dependendo da localidade ou da escala espacial adotada no estudo. 
+	
+Faz-se necessário destacar que os dados espaciais apresentam alguns problemas que podem ser prejudiciais à análise. Além da heterogeneidade espacial e da dependência espacial, pode-se mencionar problemas como a falácia ecológica, o problema da unidade de área modificável, o efeito de beirada e a influência de \textit{outliers} espaciais. 
+	
+Segundo Almeida (2012), a falácia ecológica refere-se aos erros que ocorrem ao deduzir o comportamento do indivíduo através da análise de dados agregados. Almeida (2012) argumenta que há razões para inferir, ainda que parcialmente, comportamentos individuais por meio de dados agregados. Uma situação possível é quando alguns comportamentos individuais são influenciados pelo comportamento do grupo. No entanto, via de regra, as conclusões a respeito de comportamento individual devem se basear primordialmente em dados individuais. 
+
+A ausência de dados individuais, ou o fato de unidades agregadas serem o foco da análise, torna necessário a utilização de informações espaciais agregadas. O uso dessas informações pode conduzir ao problema de unidade de área modificável, ou MAUP (do inglês \textit{modifiable areal unit problem}). Esse problema diz respeito às consequências ocasionadas pelas diversas maneiras de se delimitar as regiões em análise. 
+	
+Segundo Haining (2003), o MAUP apresenta dois efeitos distintos: efeito de escala e partição. O primeiro deles se relaciona à escala da análise, ou seja, ao número de subáreas em que a região de estudo foi particionada. O número de partições determina também o tamanho de cada unidade espacial nas quais os eventos são observados podendo influenciar o resultado de estatísticas. O segundo efeito diz respeito a forma das partição das unidades, ou seja, como as  áreas estão divididas, mantendo-se constante o número de áreas.
+	
+Por sua vez, o efeito de beirada ocorre em virtude da possibilidade da dependência espacial ir além das fronteiras da área de estudo, de forma que o valor da variável analisada possa depender de unidades espaciais que não a compõe \cite{anselin88_g}. Segundo Almeida (2012), este efeito afeta a  inferência estatística de modelos de processos espaciais. Além disso, por terem um menor número de regiões vizinhas, as regiões da fronteira também oferecem menos informações para a construção de valores médios, como por exemplo, as defasagens espaciais.
+	
+Como forma de mitigar o efeito beirada, Griffith (1983) propôs a criação de vizinhos artificiais para as regiões de fronteira através de suas replicações do mapa. Porém, como destacado por Darmofal (2006) a dúvida consiste em saber se tais vizinhos artificiais realmente apresentam interação espacial com a região. Outra solução apontada por Almeida (2012), seria estender a área de estudos, considerando adicionalmente uma zona ao longo de toda a fronteira.
+	
+%Outliers e pontos de alavancagem
+A existência de \textit{outliers} espaciais ocorre em razão da dissimilaridade dos valores de uma variável em relação ao conjunto de valores dessa mesma variável das regiões vizinhas (HAINING, 2003). No caso, os \textit{outliers} espaciais são definidos como valores extremos com relação a suas localizações geográficas. 
+
+Os \textit{outliers} espaciais, assim como os pontos de alavancagem, podem emergir do processo de obtenção dos dados, ou podem realmente sinalizar a presença de valores extremos e retratar atributos reais do fenômeno em estudo. Dessa forma, a existência de \textit{outliers} espaciais deve demandar uma investigação mais diligente \cite{almeida12_g}.
+	
+\subsubsection{Matriz de ponderação espacial} \label{W_matrix_2}
+	
+A matriz de ponderação espacial, ou matriz de pesos espaciais, tem como propósito representar estruturas espaciais decorrentes das interações de um fenômeno em estudo \cite{almeida12_g}.
+Cada entrada em uma matriz de ponderação espacial representa a conexão entre duas regiões e é denominada peso espacial. A matriz de ponderação espacial, com dimensão $n \times n$, geralmente é denotada por $\boldsymbol{W}$: 
+	
+\begin{align*}
+	\boldsymbol{W} =
+    \left[
+    \begin{array}{cccc}
+        w_{11} & w_{12} & \dots & w_{1n} \\
+        w_{21} & w_{22} & \dots &w_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        w_{n1} & w_{n2} & \dots & w_{nn}\\
+    \end{array}
+    \right],
+\end{align*}
+	
+\noindent em que $n$ é o número de regiões analisadas. Cada elemento $w_{ij}$ descreve uma medida de vizinhança entre as áreas $i$ e $j$ \cite{camara04_g}.
+	
+Existem dois problemas relacionados à determinação da matriz de ponderação espacial a ser utilizada. O primeiro está relacionado ao fato de que, muitas vezes a escolha da matriz $\boldsymbol{W}$ é arbitrária, pois não existe teste formal para sua escolha. O segundo problema, está relacionado a sensibilidade dos resultados à escolha da matriz. Portanto, a definição da matriz de ponderação espacial tem grande importância e deve levar em consideração uma fundamentação teórica \cite{almeida12_g}. 
+	
+É comum a utilização de atributos físicos e geográficos para estabelecer distâncias entre as regiões. Geralmente são utilizados critérios como a vizinhança, o tempo de deslocamento  ou a distância geográfica entre as unidades. Porém, é possível que as distâncias entre as regiões busquem representar mais aspectos socioeconômicos do que geográficos, como no caso de modelos espaciais aplicados a políticas públicas \cite{tyszler06_g}. 
+
+Uma matriz de ponderação espacial por contiguidade leva em consideração, em sua definição, as fronteiras físicas em comum entre duas regiões. Na matriz de ponderação por contiguidade binária às regiões que apresentam relação de vizinhança, é atribuído ao elemento correspondente na matriz o valor $1$, caso contrário, é atribuído o valor $0$. Formalmente, tem-se:
+	
+\[
+w_{ij} = 
+	\begin{cases}
+    	\text{1,} & \quad\text{se $i$ e $j$ são contíguos}, \\
+	    \text{0,} & \quad\text{se $i$ e $j$ não são contíguos.}\\
+	\end{cases}
+\]
+\\
+	
+Além disso, por convenção, assume-se que  $w_{ij} =  0$, para todo $i = j$, ou seja, uma região não é considerada vizinha de si mesma. O conceito de fronteira geográfica pode apresentar diferentes definições ao se observar um mapa. Como forma de ilustrar as definições de fronteira, comumente, utiliza-se o movimento de peças em um tabuleiro de xadrez \cite{almeida12_g}. 
+
+Algumas das diferentes convenções de contiguidade são apresentadas na Figura \ref{contiguidade_2}. São representadas três diferentes convenções: rainha (\textit{queen}), torre (\textit{rook}) e bispo (\textit{bishop}). Na convenção de tipo rainha, além das regiões que fazem fronteira com a região $A$, os vértices são considerados vizinhos. Na convenção torre, apenas as regiões que fazem fronteira com a região são consideradas vizinhas de $B$. Na convenção bispo, apenas os vértices são considerados vizinhos da região $C$.
+	
+\begin{figure}[H]
+	\centering
+    \caption{Convenções de contiguidade$\quad\quad$}\label{contiguidade_2}
+	\small
+	\subfloat[Rainha\label{fig_queen_2}]{\includegraphics[width=0.15\textwidth]{figuras/cont_queen.png}}\hspace{0.2cm}
+	\subfloat[Torre\label{fig_rook_2}]{\includegraphics[width=0.15\textwidth]{figuras/cont_rook.png}}\hspace{0.2cm}
+	\subfloat[Bispo\label{fig_bishop_2}]{\includegraphics[width=0.15\textwidth]{figuras/cont_bishop.png}}\\
+    %\small \textsuperscript {Fonte: Elaboração própria}
+    \parbox{\dimexpr\linewidth-8.3cm}{\raggedright
+    \strut \textsuperscript{Fonte: Elaboração própria}\strut}
+\end{figure}
+	
+Faz-se necessário salientar que a matriz de contiguidade binária é simétrica, ou seja, se duas regiões quaisquer $i$ e $j$ compartilham fronteiras físicas, tanto $w_{ij}$ quanto $w_{ji}$ serão iguais a $1$. Dessa forma, a influência gerada pela região $i$ em $j$ será observada na relação entre $j$ e $i$, o que ilustra a presença de multidirecionalidade da influência no espaço. Vale ressaltar que, se for realizada a normalização nas linhas da matriz de ponderação espacial (divisão de cada elemento pela soma da linha), a matriz resultante não será necessariamente simétrica.
+	
+As matrizes que utilizam as distâncias geográficas, como critério para a definição dos pesos, consideram que duas regiões próximas geograficamente apresentam maior interação espacial. Dentre as matrizes com essa definição, a matriz dos $k$ vizinhos mais próximos é uma das mais utilizadas. Na Equação \ref{W_prox}, $d_i(k)$ representa a menor distância em relação a região $i$ para que $i$ tenha exatamente $k$ vizinhos \cite{almeida12_g}.
+	
+\begin{align}
+	w_{ij} = 
+	\begin{cases}
+    	\text{$1,$} & \quad\text{se $d_{ij} < d_i(k)$} \\
+	    \text{$0,$} & \quad\text{se $d_{ij} > d_i(k)$}.\\
+	\end{cases}
+	\label{W_prox}
+\end{align}
+	
+De acordo com Almeida (2012), a matriz de pesos espaciais gerais de Cliff e Ord  estabelece que, duas regiões que compartilham maior extensão de fronteira apresentam uma maior interação entre si, além de considerar o fator de distância entre as regiões. Ambas as informações são utilizadas no cálculo dos pesos da matriz, sendo esses definidos pelo comprimento relativo da fronteira comum entre as regiões, ajustados pela distância inversa entre elas. Os pesos espaciais da matriz de pesos gerais são expressos da seguinte maneira:
+	
+\begin{align*}
+	w_{ij} = \frac{f_{ij}^\phi}{d_{ij}^\delta},
+\end{align*}
+	
+\noindent em que $f_{ij}$ é a proporção da fronteira comum entre as observações $i$ e $j$ no perímetro de $i$, e $\phi$ e $\delta$ são parâmetros a serem definidos. Tal matriz de pesos espaciais não necessariamente será simétrica. Ao levar em consideração a proporção do perímetro total da região $i$ que é comum a região $j$ em regiões de diferentes perímetros, tal proporção também seria distinta.
+	
+
+\subsubsection{Análise exploratória de dados espaciais}
+
+A análise exploratória de dados espaciais (AEDE) busca descrever a distribuição espacial das observações de forma a captar seus padrões de associação espacial e verificar a existência de \textit{clusters} espaciais. Além do mais, a AEDE possibilita analisar a presença de diferentes regimes espaciais ou outras formas de instabilidade, assim como, possibilita a identificação de observações atípicas, ou como são também denominadas, \textit{outliers} espaciais \cite{almeida12_g}.
+
+Segundo Messner \textit{et al.}. (1999, p. 427), utilizar metodologias exploratórias de dados espaciais se justifica pois, “a percepção humana não é suficientemente rigorosa para determinar agrupamentos significativos e, de fato, tende a ser viesada para achar padrões, mesmo em dados espaciais aleatórios.” Dessa forma, por meio dessas metodologias, é possível aplicar indicadores de associação espacial globais ou locais para identificar os diferentes regimes espaciais em um conjunto de dados.
+
+A Figura \ref{autocorrelacao_2}	apresenta exemplos de padrões de autocorrelação espacial. O padrão de autocorrelação positiva pode ser visualizado na Figura \ref{autocor_pos_2}. Neste padrão de autocorrelação, valores semelhantes estão localizados próximos uns dos outros. Na Figura \ref{autocor_null_2}, é exibida uma autocorrelação nula, o que indica que há aleatoriedade da distribuição espacial dos valores da variável. Por fim, na Figura \ref{autocor_neg_2}, é apresentado um padrão de autocorrelação negativa, indicando que valores dissimilares se encontram próximos uns dos outros. 
+ 
+\begin{figure}[H]
+	\centering
+	\caption{Padrões de autocorrelação espacial}
+	\small
+	\subfloat[Positiva\label{autocor_pos_2}]{\includegraphics[width=0.15\textwidth]{figuras/autocor_pos.png}}\hspace{0.2cm}
+	\subfloat[Nula\label{autocor_null_2}]{\includegraphics[width=0.15\textwidth]{figuras/autocor_null.png}}\hspace{0.2cm}
+	\subfloat[Negativa\label{autocor_neg_2}]{\includegraphics[width=0.15\textwidth]{figuras/autocor_neg.png}}\\
+	%\small \textsuperscript {Fonte: Elaboração própria}
+	\parbox{\dimexpr\linewidth-8.3cm}{\raggedright
+    \strut \textsuperscript{Fonte: Elaboração própria}\strut}
+	\label{autocorrelacao_2}
+\end{figure}
+	
+Nos exemplos da Figura \ref{autocorrelacao_2}, os dados estão apresentados no formato de grades regulares. Entretanto, as regiões em estudo, geralmente, são compostas por polígonos irregulares. Este fato torna a identificação visual, principalmente dos padrões de autocorrelação nula e negativa, mais difícil. Dessa forma, torna-se necessário a utilização de testes estatísticos para a identificação dos padrões de autocorrelação espacial. 
+	
+\subsubsection{Autocorrelação espacial global}
+
+Umas das estatísticas capazes de identificar padrões de autocorrelação espacial é o coeficiente \textit{I} de Moran. Este coeficiente foi proposto em 1948 e é um dos principais indicadores de autocorrelação espacial global \cite{almeida12_g}. Tal coeficiente é expresso como uma medida de auto-covariância na forma de produto cruzado. Formalmente, a estatística é expressa por:
+	
+\begin{align}\label{IMoran_g}
+    I = \dfrac{n}{S_0} \dfrac{\displaystyle\sum_{i=1}^{n} \displaystyle\sum_{j=1}^{n} w_{ij} z_i z_j}{\displaystyle\sum_{i=1}^{n} z_i^2}
+\end{align}
+	
+\noindent em que $z_i$ denota o valor da variável de interesse padronizada na região $i$, $n$ representa o número de regiões e $S_0$ é a soma de todos os pesos espaciais da matriz $\boldsymbol{W}$ \cite{almeida12_g}.
+	
+O \textit{I} de Moran pode ser calculado matricialmente pela seguinte forma:
+	
+\begin{align*}
+	I = \dfrac{n}{S_0} \dfrac{z'\boldsymbol{W}z}{z'z},
+\end{align*}
+	
+\noindent em que $\boldsymbol{W}z$ equivale aos valores médios da variável padronizada nas regiões vizinhas, de acordo com a matriz $\boldsymbol{W}$.
+
+O coeficiente \textit{I} de Moran é utilizado para testar a existência de autocorrelação espacial e tem como hipótese nula do teste a aleatoriedade espacial. Além disso é necessário destacar que, como demostraram Cliff e Ord (1981), o \textit{I} de Moran não é centrado em $0$, mas sim, em seu valor esperado $-[1/(n-1)]$, que é o valor que seria obtido caso a distribuição espacial fosse aleatória. Sendo assim, valores da estatística \textit{I} de Moran entre o valor esperado e $1$ apontam para a presença de autocorrelação espacial positiva e, valores entre $-1$ e o valor esperado, indicam a existência de autocorrelação espacial negativa. 
+	
+A presença de autocorrelação espacial positiva pode ser interpretada como uma indicação de que, no geral, as regiões que apresentam valores acima da média na variável de interesse tendem a ter ao seu redor regiões que também apresentam valores acima da média desta variável e, regiões com valores abaixo da média tendem a estar circundadas por regiões que também apresentam valores abaixo da média. Em contrapartida, a presença de autocorrelação espacial negativa indica dissimilaridade entre os valores da variável e suas localizações. Ou seja, regiões com valores altos (acima da média) da variável estão rodeadas por regiões com baixos valores (abaixo da média) e vice versa \cite{almeida12_g}. 
+	
+Depois de calculado o valor da estatística \textit{I} de Moran, é imprescindível realizar uma verificação se a correlação espacial encontrada é significativa. A inferência sobre o \textit{I} de Moran pode ser realizada pela associação do índice a uma distribuição estatística, geralmente, a distribuição normal. No entanto, a forma mais usual é a utilização de um teste de pseudo-significância, sem pressupostos em relação à distribuição, conhecido como teste de permutação aleatória. Nesta abordagem, são geradas diferentes permutações dos valores associados às regiões, sendo que cada permutação produz um novo arranjo espacial com os valores redistribuídos entre as áreas. Com os coeficientes obtidos na situação observada e sobre os arranjos provenientes das permutações aleatórias, tem-se uma distribuição empírica do \textit{I} de Moran \cite{camara04_g}.
+
+\subsubsection{Diagrama de dispersão de Moran}
+	
+O diagrama de dispersão de Moran, exemplificado na Figura \ref{dispersaomoran_2}, consiste em outra forma de visualizar os regimes espaciais dos dados em questão. Em seu eixo horizontal, são representados os valores padronizados da variável de interesse. No eixo vertical são apresentados os valores da defasagem espacial da variável. Se a matriz de ponderação espacial for do tipo de contiguidade binária e com normalização nas linhas, os valores de defasagem espacial correspondem às médias da variável nos vizinhos das respectivas áreas.
+
+\begin{figure}[H]
+	\centering
+	\caption{Diagrama de dispersão de Moran com dados fictícios.}\label{dispersaomoran_2}
+	\includegraphics[width=0.7\textwidth]{figuras/moran_scatter.png}\\
+	\parbox{\dimexpr\linewidth-5cm}{\raggedright
+    \strut \textsuperscript{Fonte: Elaboração própria com dados simulados.}\strut}
+\end{figure}
+
+O diagrama de dispersão de Moran se divide em quatro quadrantes , como mostrado na Figura \ref{dispersaomoran_2}. No primeiro quadrante, o diagrama de Moran apresenta as observações do tipo Alto-Alto (AA), que representa as regiões que têm valor da variável em estudo acima da média, com regiões vizinhas que também possuem valores acima da média. Por sua vez, o segundo quadrante apresenta as observações do tipo Baixo-Alto (BA), que são as regiões com valores da variável analisada abaixo da média, rodeadas por regiões que possuem valores acima da média. Já o terceiro quadrante contém as observações chamadas de Baixo-Baixo (BB), que contempla regiões com valores abaixo da média, cujas regiões vizinhas também têm valores abaixo da média. Por fim, o quarto quadrante abrange as regiões do grupo  Alto-Baixo (AB), e compreende as regiões com valor alto, rodeadas por vizinhos de valores baixos para a variável.
+
+\subsubsection{Autocorrelação espacial local}
+	
+Um indicador com a capacidade de detectar padrões locais de autocorrelação espacial é o $I_i$ de Moran local \cite{almeida12_g}. Este indicador foi proposto por Anselin em $1995$ e é uma estatística com capacidade de detectar padrões locais de autocorrelação espacial estatisticamente significativos. Ainda segundo Anselin (1995), um indicador que é capaz de identificar padrões locais de autocorrelação espacial é chamado \textit{``local indicator of spatial association} (LISA)". Esta classe de indicadores deve satisfazer dois critérios: 
+
+
+\begin{enumerate}[leftmargin=1.8cm, label=\alph*)]
+    \item o indicador deve ser capaz de indicar \textit{clusters} espaciais estatisticamente significativos para cada observação;
+	\item o somatório dos indicadores locais, calculados para todas as regiões, deve equivaler ao indicador de autocorrelação espacial global para as mesmas regiões.
+\end{enumerate}
+
+
+Um exemplo de indicador do tipo LISA é o $I_i$ de Moran local. Este indicador decompõe o $I$ de Moran global em quatro categorias: Alto-Alto (AA), Baixo-Baixo (BB), Alto-Baixo (AB) e  Baixo-Alto (BA). Essas categorias são equivalentes aos quadrantes do diagrama de dispersão de Moran (Figura \ref{dispersaomoran_2}). O $I_i$ de Moran local para a variável padronizada $z_i$, observada na regão $i$, pode ser expressa como 
+	
+\begin{align*}
+	I_i = z_i \sum_{j}^{} w_{ij} z_j.
+\end{align*}
+
+O cálculo de $I_i$ é realizado englobando apenas as regiões vizinhas de $i$, definidas por meio da matriz de pesos espaciais. Como o cálculo do $I_i$ é realizado para cada uma das $n$ observações, o que gera uma grande quantidade de informação, uma forma mais eficiente de visualizar o conjunto de estatísticas geradas é apresentá-las em um mapa de \textit{clusters}. Este mapa exibe uma combinação do diagrama de dispersão de Moran (Figura \ref{dispersaomoran_2}) com a significância do local $I_i$ \cite{almeida12_g}. 
+
+	
+%A Figura \ref{lisa_ex_2} apresenta um exemplo de um mapa de \textit{clusters} \textit{LISA}. A variável utilizada foi o número de apólices de seguro rural contratadas nos municípios do Brasil no ano de $2019$. O mapa da Figura \ref{lisa_ex_2} demonstra a classificação em quatro categorias de associação espacial estatisticamente significativas. 
+	
+%\begin{figure}[H]
+%	\centering
+%	\caption{Mapa de \textit{clusters LISA} para apólices contratadas de seguro rural no ano de 2019}
+%	\includegraphics[width=0.6\textwidth]{figuras/map_lisa_ex.png}
+%	\parbox{\dimexpr\linewidth-1.5cm}{\raggedright
+%    \strut \textsuperscript{Fonte: Elaboração própria}\strut}
+%    \label{lisa_ex_2}
+%\end{figure}
+	
+%É necessário destacar que, ambas as estatísticas de autocorrelação espacial local, $G_i$ e $I_i$, apresentam vantagens e desvantagens. Com relação ao $G_i$, uma vantagem é a capacidade  de estabelecer uma definição mais clara de \textit{clusters} com valores altos  (\textit{hot spots}) ou \textit{clusters} com valores baixos (\textit{cool spots}). No entanto, este indicador traz a desvantagem de não ser capaz de indicar uma situação de associação espacial de valores dissimilares. Por sua vez, o $I_i$ é capaz de indicar autocorrelação negativa e possui a capacidade de revelar \textit{outliers} globais \cite{darmofal06_g}.
+
+
+\subsection{ANÁLISE MULTIVARIADA}
+	
+Em uma pesquisa, os dados obtidos são considerados multivariados quando cada unidade amostral possui diversas variáveis aleatórias. A análise multivariada se caracteriza por um conjunto de métodos estatísticos que são utilizados para analisar as variáveis como um todo, levando-se em conta, por exemplo, a sua estrutura de correlação. Os métodos de análise multivariada possibilitam a realização de  uma avaliação muito mais ampla do conjunto de dados, permitindo encontrar padrões que, possivelmente, não seriam revelados ao se analisar cada variável separadamente \cite{mingoti10}. 
+	
+Segundo Hair \textit{et al.} (2009), os métodos multivariados podem ser divididos como métodos de dependência e interdependência. Se o estudo envolver variáveis com uma estrutura de dependência previamente identificada, aconselha-se que se faça uso de técnicas de dependência, tais como regressão múltipla, regressão logística ou análise discriminante. Entretanto, se não haver uma distinção preliminar entre quais variáveis são dependentes e independentes, aconselha-se que o uso de técnicas de interdependência, como análise fatorial e análise de agrupamento.
+	
+	
+A representação de dados multivariados se dá através de matrizes. Uma amostra aleatória que contenha $n$ unidades amostrais ou observações, contendo valores de $p$ variáveis observadas, dá origem a uma matriz de dados $X$ com dimensão $n$ (linhas) por $p$ (colunas):
+	
+\begin{align}\label{X_2}
+    X_{n \times p} =
+	\left[
+	\begin{array}{cccc}
+	    X_{11} & X_{12} & \dots & X_{1p} \\
+	    X_{21} & X_{22} & \dots & X_{2p} \\
+	    \vdots & \vdots & \ddots & \vdots \\
+	    X_{n1} & X_{n2} & \dots & X_{np}\\
+	\end{array}
+	\right],
+\end{align}
+	
+\noindent em que cada unidade amostral é representada por uma linha da matriz de dados $X$, sendo um vetor com $p$ elementos (variáveis), e cada variável é representada por uma coluna de $X$, sendo um vetor com $n$ elementos \cite{everitt11}.
+	
+A representação de dados multivariados em uma matriz como apresentada na forma da definição (\ref{X_2}) pode não ser muito informativa, principalmente se o tamanho amostral $n$ for grande e houver um número abundante de variáveis $p$. Desse modo, torna-se relevante a utilização de medidas resumo dos dados amostrais, calculando-se a média, mediana, desvio padrão, por exemplo, de forma a sintetizar as informações dos dados da amostra \cite{ferreira11_g}.  
+	
+A média amostral, muito utilizada como uma medida de tendência central, torna-se o vetor de médias amostral no caso multivariado de dimensão $p \times 1$, onde cada elemento $\bar{X}_{i}$, com $i = 1,2,\cdots,p $, é a média de uma variável:
+	
+\begin{align*}
+	\bar{X} = \left[
+	\begin{array}{c}
+    	\bar{X}_1\\
+	    \bar{X}_2\\
+	    \vdots\\
+	    \bar{X}_p\\
+    \end{array}
+	\right].
+\end{align*}
+	
+Como medida de dispersão dos dados, no caso multivariado, utiliza-se, no lugar da variância amostral, a matriz de covariâncias amostral $\boldsymbol{S}$ de dimensão $p \times p$. Em sua diagonal principal, estão as variâncias de cada uma das $p$ variáveis, enquanto os elementos fora da diagonal principal são as covariâncias entre as variáveis. A matriz de covariâncias amostral é simétrica, ou seja,  $S_{ij}$ $=$ $S_{ji}$.
+	
+	
+\begin{align*}
+	S =
+	\left[
+	\begin{array}{cccc}
+    	S_{11} & S_{12} & \dots & S_{1p} \\
+	    S_{21} & S_{22} & \dots & S_{2p} \\
+	    \vdots & \vdots & \ddots & \vdots \\
+	    S_{p1} & S_{p2} & \dots & S_{pp} 
+	\end{array}
+	\right].
+\end{align*}        
+	
+A correlação também pode ser usada como uma medida de associação entre duas variáveis. Os valores do coeficiente de correlação variam entre $-1$ e $1$. Valores próximos de $1$ indicam que as variáveis estão fortemente correlacionadas de forma positiva, ou seja, grandes valores de uma estão associados a grandes valores da outra. Já valores próximos de $-1$ indicam que as variáveis estão fortemente correlacionadas de forma negativa, o que indica que grandes valores de uma estão associados a pequenos valores da outra. A matriz de correlações amostral é dada por 
+	
+\begin{align}
+	R =
+	\left[
+	\begin{array}{cccc}
+    	1      & r_{12} & \dots  & r_{1p} \\
+	    r_{21} & 1 & \dots  & r_{2p} \\
+	    \vdots & \vdots & \ddots & \vdots \\
+	    r_{p1} & r_{p2} & \dots  & 1\\
+	\end{array}
+	\right].
+	\label{def_matriz_corr_2}
+\end{align}        
+	
+\noindent em que $r_{ij} = \frac{S_{ij}}{\sqrt{S_{ii} S_{jj}}}$ \cite{ferreira11_g}.  
+	
+\vspace{0.15cm} % só pra dar um espacinho :)
+	
+Outras estatísticas descritivas, como a matriz de somas de quadrados e produtos e a matriz de correlações, podem ser consideradas, dependendo do objetivo de estudo \cite{ferreira11_g}.
+	
+Assim como ocorre na análise univariada, as técnicas de estatística multivariada podem ser divididas em dois grupos, as técnicas exploratórias e as técnicas de inferência estatística. O primeiro grupo constitui-se de técnicas que não dependem do conhecimento da forma matemática da distribuição de probabilidade que gerou os dados amostrais. Além disso, o uso dessas técnicas permite a identificação de padrões em dados multivariados, fazendo com que possuam grande apelo prático. São exemplos de técnicas exploratórias: análise de componentes principais, análise fatorial exploratória e análise de agrupamento. Por outro lado, o grupo de técnicas de inferência estatística tem como objetivo a estimação de parâmetros, testes de hipóteses, análise de regressão multivariada etc.  Portanto, as técnicas de inferência fazem uso da amostra para realizar inferências sobre a população de onde essa amostra foi extraída \cite{mingoti10}.
+	
+\subsubsection{Análise de componentes principais} \label{ACP} 
+	
+A análise de componentes principais (ACP) tem como objetivo, explicar a estrutura de covariâncias das $p$ variáveis, $X^T = [X_1 \quad X_2 \quad \dots \quad X_p]$, por meio de combinações lineares das variáveis originais. Os componentes principais são as $p$ combinações lineares obtidas, $Y^T = [Y_1 \quad Y_2 \quad \dots \quad Y_p]$, e não sendo correlacionados entre si. Os componentes principais são ordenados de forma que suas primeiras combinações lineares já contabilizem a maior parte da variância presente em todas as variáveis originais, consequentemente, podendo ser usados para fornecer uma redução das dimensões dos dados \cite{mingoti10, everitt11}.
+	
+Vários critérios podem ser adotados para selecionar o número de componentes, de forma que grande parte da variância total seja explicada por um pequeno conjunto das novas variáveis. Com  uma grande quantidade de variação das variáveis originais explicada pelos $(k)$ primeiros componentes principais, ocorre uma simplificação da estrutura de covariâncias das variáveis originais. A ACP pode ser utilizada como uma ferramenta para auxiliar em outras técnicas, como ocorre em problemas de multicolinearidade na regressão linear, por exemplo \cite{ferreira11_g}.
+	
+O primeiro componente principal $Y_1$ é a combinação linear
+\begin{align*}
+	Y_1 = a_{11}X_1 + a_{12}X_2 + \dots + a_{1p}X_p,
+\end{align*}
+cuja variância amostral é a maior dentre todas as outras combinações lineares. O vetor de coeficientes referente ao $j$-ésimo CP é representado por $\boldsymbol{a}_j= [a_{j1} \quad a_{j2} \quad \dots \quad a_{jp}]$. É importante usar uma restrição nos valores desses coeficientes, como $\boldsymbol{a}_1^T\boldsymbol{a}_1 = 1$, ou seja, a soma dos quadrados desses valores deve ser igual a $1$. Isso deve ser feito porque a variância de $Y_1$ poderia crescer de forma ilimitada apenas aumentando os coeficientes $\boldsymbol{a}_1$. A variância amostral de $Y_1$ é dada por $\boldsymbol{a}_1^T S\boldsymbol{a}_1$, sendo $\boldsymbol{S}$ a matriz de covariâncias amostral das $X$ variáveis e $\boldsymbol{a}_1$ é o autovetor da matriz $S$ associado ao maior autovalor $\lambda$ dessa matriz \cite{everitt11}. A obtenção de autovalores $\lambda$ e autovetores $\boldsymbol{e}$ de uma matriz quadrada $p \times p$ são tais que $\boldsymbol{A}\boldsymbol{e} = \lambda\boldsymbol{e}$. Para maiores detalhes, consultar Ferreira (2011).
+	
+Ainda de acordo com os autores, o segundo componente principal, $Y_2$, definido como a combinação linear
+\begin{align*}
+	Y_2 = a_{21}X_1 + a_{22}X_2 + \dots + a_{2p}X_p,
+\end{align*}
+ou seja, $Y_2 = \boldsymbol{a}_2^T\boldsymbol{X}$, em que $\boldsymbol{a}_2^T = [a_{21} \quad a_{22} \quad \dots \quad a_{2p}]$ e $\boldsymbol{X}^T = [X_{1} \quad X_{2} \quad \dots \quad X_{p}]$, que possui a maior variância sujeito às condições
+\begin{align*}
+	\boldsymbol{a}_2^T\boldsymbol{a}_2 = 1,\\
+	\boldsymbol{a}_2^T\boldsymbol{a}_1 = 0,
+\end{align*}
+em que a segunda condição garante que $Y_1$ e $Y_2$ são não correlacionados. Todos os componentes são obtidos de forma similar.
+	
+O vetor de coeficientes que define o $j$-ésimo componente principal, $\boldsymbol{a}_j$, é o autovetor de $\boldsymbol{S}$ associado com o seu $j$-ésimo maior autovalor. A variância do $j$-ésimo componente principal é dada por $\lambda_j$, sendo  $\lambda_1, \lambda_2, \dots, \lambda_p$ os autovalores de $\boldsymbol{S}$ sujeitos à restrição $\boldsymbol{a}_j^T\boldsymbol{a}_j = 1$ \cite{everitt11}.
+	
+A proporção da variância total de $\boldsymbol{X}$ explicada pelo $j$-ésimo componente principal é definida por
+\begin{align*}
+	\dfrac{Var(Y_j)}{\textrm{Variância total de } X} = \dfrac{\lambda_j}{\textrm{traço}(\boldsymbol{S})} = \dfrac{\lambda_j}{\displaystyle\sum_{i=1}^{p}\lambda_i}.
+\end{align*}
+	
+%Além disso, as variâncias total e generalizada de $\boldsymbol{X}$ podem ser descritas pelas variâncias total e generalizada de $\boldsymbol{Y}$:
+%\begin{align*}
+%	\textrm{traço}(\boldsymbol{S}) = \displaystyle\sum_{i=1}^{p}\lambda_i = S_1^2 + S_2^2 + \dots + S_p^2 \quad \textrm{ e} \quad |\boldsymbol{S}| = \prod_{i=1}^{p}\lambda_i.
+%\end{align*}
+	
+%Dessa forma, os vetores $\boldsymbol{X}$ e $\boldsymbol{Y}$ são equivalentes em relação a essas duas medidas de variação. Além disso, sempre o primeiro componente principal tem a maior proporção de explicação da variância total de $\boldsymbol{X}$ \cite{mingoti10}.
+	
+De acordo com Everitt e Hothorn (2011), os primeiros $k$ componentes, em que $k < p$, explicam uma proporção da variância total,
+	
+\begin{align*}
+    \dfrac{\displaystyle\sum_{j=1}^{k}Var(Y_j)}{\textrm{Variância total de } X} = \dfrac{\displaystyle\sum_{j=1}^{k}\lambda_j}{\textrm{traço}(\boldsymbol{S})} = \dfrac{\displaystyle\sum_{j=1}^{k}\lambda_j}{\displaystyle\sum_{j=1}^{p}\lambda_j}.
+\end{align*}
+	
+Os componentes principais podem ser obtidos a partir da matriz de covariâncias amostrais $S$ ou a partir da matriz de correlações amostrais $R$. A extração dos componentes da matriz de covariâncias deve ser preferido quando as variáveis originais estão na mesma escala, o que é raro ocorrer. Extrair os componentes, como os autovetores de $R$ é equivalente a calcular os componentes das variáveis originais para, em seguida, padronizar cada um para ter variância igual a $1$ \cite{everitt11}.
+	
+Ainda segundo Everitt e Hothorn (2011), os componentes principais são variáveis aleatórias que podem ser observadas apenas a partir da observação de um vetor aleatório $\boldsymbol{X}$. Os escores dos CPs são obtidos pela substituição dos valores observados de $\boldsymbol{X}$ em cada um dos componentes $Y_j$. Se os CPs forem obtidos a partir da matriz de covariâncias $S$, os escores $Y^*_{ji}$ dos $k$ componentes para cada observação $i$ são dados por:  
+	
+\begin{align*}
+	Y^*_{1i} & =\boldsymbol{a}_1^T\boldsymbol{X}_i\\
+	Y^*_{2i} & =\boldsymbol{a}_2^T\boldsymbol{X}_i\\
+	&\vdots\\
+	Y^*_{ki} & =\boldsymbol{a}_k^T\boldsymbol{X}_i.
+\end{align*}
+	
+Estes são geralmente utilizados na condução de análises estatísticas de dados ou simplesmente para ordenação, identificando aquelas observações que possuem os maiores ou menores valores globais dos componentes \cite{mingoti10}.
+
+
+%=========================================================================================================
+%111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+% Capítulo 1
+
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0ex}
+
+%% reinicia contadores de página e demais ambientes
+\setcounter{page}{32}
+\setcounter{section}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+
+%% definições de título
+\def\titlecapa{O seguro rural no Brasil: evolução e distribuição regional}
+\def\titlecapA{\expandafter\MakeUppercase\expandafter{\titlecapa}}
+\addcontentsline{toc}{section}{\hspace*{\distnumber}ARTIGO 1 -- \titlecapa}
+
+%%.....................................................
+%% inclui título
+\begin{center}
+\noindent
+%\begin{minipage}[t]{0.2\textwidth}
+\textbf{ARTIGO 1 - }
+%\end{minipage}
+%\begin{minipage}[t]{0.8\textwidth}
+%\begin{flushleft}
+\textbf{\titlecapA} 
+%\end{flushleft}
+%\end{minipage}
+\end{center}
+\vspace{0.8cm}
+
+%%.....................................................
+%% inclui resumo e abstract
+
+%\begin{center}
+\noindent\textbf{RESUMO} 
+\vspace{0.8cm}
+%\end{center}
+%\vspace{1cm}
+\begin{singlespace}
+\noindent\input{../cap1/cap1resumo.tex}
+\end{singlespace}
+
+\vspace{1cm}
+%\begin{center}
+\noindent\textbf{ABSTRACT}
+\vspace{0.8cm}
+%\end{center}
+\begin{singlespace}
+\noindent   \input{../cap1/cap1abstract.tex}
+\end{singlespace}
+
+%%.....................................................
+%% inclui capítulo
+
+\newpage
+\input{../cap1/cap1.tex}
+
+%%.....................................................
+%% inclui referências
+
+\begin{flushleft}
+\renewcommand\refname{}
+\vspace*{-0.9cm}
+\begin{singlespace}
+\input{../cap1/cap1introduc.bbl} 
+\end{singlespace}
+\end{flushleft}
+
+%%.....................................................
+%% inclui anexos
+
+\newpage
+\addcontentsline{toc}{section}{\hspace*{\distnumber}APÊNDICES}
+\begin{center}
+%\section*{APÊNDICES} 
+\end{center}
+
+\begin{singlespace}
+\begin{center}
+\noindent{\textbf{{APÊNDICE A --} Mapas da distribuição espacial das variáveis do seguro rural no Brasil, de 2006 a 2019}}
+\end{center}
+\end{singlespace}
+
+\noindent
+\begin{small}
+\linespread{0.86}
+\input{../anexos/anexo_mapa_tematico.tex}
+\end{small}
+
+%\newpage
+%\begin{singlespace}
+%\begin{center}
+%\noindent{\textbf{{APÊNDICE B$\,\,$} Mapas \textit{LISA} das variáveis do seguro rural no Brasil, de 2006 a 2019}}
+%\end{center}
+%\end{singlespace}
+%\noindent
+%\begin{small}
+%\linespread{0.86}
+%\input{../anexos/anexo_mapa_lisa.tex}
+%\end{small}
+
+\newpage
+\begin{singlespace}
+\begin{center}
+\noindent{\textbf{{APÊNDICE B -- } Códigos em Python}}
+\end{center}
+\end{singlespace}
+\vspace{0.25cm}
+%\noindent \rule[4mm]{\textwidth}{0.1ex}
+\begin{small}
+\linespread{0.7}
+%\vspace{-1cm}
+\noindent Código correspondente ao tratamento dos dados.\\
+Disponível online em: \url{https://github.com/walefmachado/seguro_rural_espacial/blob/main/scripts/seguro_rural_dados.py}
+
+\vspace{0.25cm}
+
+\noindent Código correspondente aos gráficos, mapas e análise exploratória espacial. \\
+Disponível online em: \url{https://github.com/walefmachado/seguro_rural_espacial/blob/main/scripts/ seguro_rural_cap1.py}
+
+%\input{scripts/SR_DATA.py} 
+%\noindent \rule[4mm]{\textwidth}{0.1ex}
+\end{small}
+
+
+
+%=========================================================================================================
+%222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+% Capitulo 2
+
+\newpage
+
+%% reinicia contadores de página e demais ambientes
+\setcounter{page}{59}
+\setcounter{section}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+\renewcommand*{\theHsection}{chX.\the\value{section}}
+
+%% definições de título
+\def\titlecapc{Análise de autocorrelação espacial de dados multivariados de seguro rural}
+\def\titlecapC{\expandafter\MakeUppercase\expandafter{\titlecapc}}
+\addcontentsline{toc}{section}{\hspace*{\distnumber}ARTIGO 2 -- \titlecapc}
+
+%%.....................................................
+%% inclui título
+
+\begin{center}
+\noindent
+%\begin{minipage}[t]{0.2\textwidth}
+\textbf{ARTIGO 2 - }
+%\end{minipage}
+%\begin{minipage}[t]{0.8\textwidth}
+%\begin{flushleft}
+\textbf{\titlecapC} 
+%\end{flushleft}
+%\end{minipage}
+\end{center}
+\vspace{0.8cm}
+
+
+%%.....................................................
+%% inclui resumo e abstract
+
+%\begin{center}
+\noindent\textbf{RESUMO} 
+\vspace{0.8cm}
+%\end{center}
+%\vspace{1cm}
+\begin{singlespace}
+\noindent\input{../cap2/cap2resumo.tex}
+\end{singlespace}
+
+\vspace{1cm}
+%\begin{center}
+\noindent\textbf{ABSTRACT}
+\vspace{0.8cm}
+%\end{center}
+\begin{singlespace}
+\noindent   \input{../cap2/cap2abstract.tex}
+\end{singlespace}
+
+%%.....................................................
+%% inclui capítulo
+
+\newpage
+\input{../cap2/cap2.tex}
+
+%%.....................................................
+%% inclui referências
+
+\begin{flushleft}
+\renewcommand\refname{}
+\vspace*{-0.9cm}
+\begin{singlespace}
+\input{../cap2/cap2introduc.bbl} 
+\end{singlespace}
+\end{flushleft}
+
+%%.....................................................
+%% inclui anexos
+
+\newpage
+\addcontentsline{toc}{section}{\hspace*{\distnumber}APÊNDICES}
+\newpage
+\begin{singlespace}
+\begin{center}
+\noindent{\textbf{{APÊNDICE A -- } Códigos em Python}}
+\end{center}
+\end{singlespace}
+\vspace{0.25cm}
+\begin{small}
+\linespread{0.86}
+\noindent Código correspondente ao tratamento dos dados. Disponível online em: \url{https://github.com/walefmachado/seguro_rural_espacial/blob/main/scripts/seguro_rural_dados.py}
+
+\vspace{0.25cm}
+
+\noindent Código correspondente aos gráficos, mapas e ACP e AEDE. Disponível online em: \url{https://github.com/walefmachado/seguro_rural_espacial/blob/main/scripts/ seguro_rural_cap2.py}
+%\input{scripts/SR_DATA.py} 
+%\noindent \rule[4mm]{\textwidth}{0.1ex}
+\end{small}
+
+
+\newpage
+
+\section{CONSIDERAÇÕES FINAIS}
+
+O objetivo do presente trabalho foi analisar a evolução e a dinâmica espacial de variáveis do seguro rural nos municípios brasileiros entre 2006 e 2019. Além disso, buscou-se investigar a presença de padrões de distribuição espacial, por meio da autocorrelação espacial, bem como a existência de agrupamentos locais de distribuição espacial.
+
+A análise possibilitou constatar resultados positivos na evolução do seguro rural no Brasil. O número de apólices contratadas tem um crescimento de cerca de $8,69$ vezes seu valor inicial durante o período. Ademais, a área agrícola segurada no país praticamente dobrou entre os anos de $2019$ e $2020$, quando alcançou o maior valor, $13,7$ milhões de hectares, que representa $20\%$ da área total agrícola do país. 
+
+Devido à estrutura de correlação entre as variáveis de seguro rural foi possível utilizar os escores do primeiro componente principal como uma variável representativa das demais variáveis originais. Os escores do primeiro componente principal foram, em todos os anos, positivamente correlacionados com todas as variáveis originais. Além disso, em todos os anos analisados, a variância explicada acumulada pelo primeiro componente foi superior à $55,3\%$. 
+
+Os resultados da AEDE apontam que existe dependência espacial em todos os anos analisados. Ou seja, existem padrões de associação espacial estatisticamente significativos. Também foi possível identificar a presença de \textit{clusters} espaciais significativos. Tal resultado é observado em todas as variáveis de seguro rural analisadas. 
+
+Em geral, identificou-se que as maiores concentrações de apólices de seguro rural estão situadas nas regiões Sul, Centro-Oeste e Sudeste, no sul do Estado de São Paulo. Além disso, foi constatado que há um aumento na dependência espacial do seguro rural ao longo do período analisado. Ou seja, municípios que possuem uma maior adesão ao seguro rural tendem a ser geograficamente próximos de municípios que também têm maior número de apólices de seguro rural contratadas. Para mais, ressalta-se que, embora mantenham a concentração do número de apólices contratadas, número de apólices indenizadas, valores de subvenção, indenização e prêmio, atualmente há expansão da demanda por seguros agrícolas. 
+
+Apesar de os dados indicarem uma concentração geográfica da adesão ao sistema de seguro rural no Brasil, é necessário levar em consideração outros sistemas, como o Proagro e o programa Garantia Safra. É necessário, ainda, ressaltar que a adesão dos produtores deve ocorrer como uma resposta à percepção do risco das atividades agropecuárias, ou seja, o seguro deve difundir-se com base na compreensão dos riscos e das vantagens de sua contratação. 
+
+Por fim, este trabalho pode ser entendido como uma abordagem inicial, a partir da qual é possível se introduzir novos métodos estatísticos a fim de aprimorar os resultados. Dentre esses métodos, destaca-se a extensão das transições de Markov que possibilita uma análise mais abrangente dinâmica temporal de transição entre regimes espaciais. 
+
+\newpage
+\addcontentsline{toc}{section}{\hspace*{\distnumber}REFERÊNCIAS}
+\begin{center}
+\section*{REFERÊNCIAS} 
+\end{center}
+
+\begin{singlespace}
+\begin{flushleft}
+\renewcommand\refname{}
+\vspace*{-1.5cm}
+\input{referencia_geral.bbl}
+\end{flushleft}
+\end{singlespace}
+
+%% NOTA: \label última em um elemento que esteja na última página é
+%% usado para retornar o total de páginas que aparece lá na caixa da
+%% ficha catalográfica. Assim não precisa ficar inserindo manualmente.
+
+%=========================================================================================================
+
+\end{document}
+
+%=========================================================================================================
